@@ -1,6 +1,9 @@
+/*
 function sayHello() {
     console.log("Hello!");
 }
+*/
+const sayHello = () => console.log("Hello!"); // Arrow function version
 
 function introduceYourself(name) {
     console.log("Hi, my name is " + name + ".");
@@ -14,10 +17,13 @@ function addNumbers(num1, num2) {
     return num1 + num2;
 }
 
+/*
 function createFullName(firstName, lastName) {
     const fullName = `${firstName} ${lastName}`;
     return fullName;
 }
+*/
+const createFullName = (firstName, lastName) => `${firstName} ${lastName}`; // Arrow function version
 
 function calculateTip(billAmount, tipPercentage = 15) {
     const tipAmount = billAmount * (tipPercentage / 100);
