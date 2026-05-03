@@ -5,12 +5,25 @@ function sayHello() {
 */
 const sayHello = () => console.log("Hello!"); // Arrow function version
 
+function checkName(name) {
+    if (typeof name === "string") {
+        return true;
+    } else {
+        console.error("Please provide a valid name.");
+        return false;
+    }
+}
+
 function introduceYourself(name) {
-    console.log("Hi, my name is " + name + ".");
+    if (checkName(name)) {
+        console.log("Hi, my name is " + name + ".");
+    }
 }
 
 function greetPerson(name, greeting = "Hello") {
-    console.log(`${greeting}, ${name}!`);
+    if (checkName(name)) {
+        console.log(`${greeting}, ${name}!`);
+    }
 }
 
 function addNumbers(num1, num2) {
@@ -30,10 +43,15 @@ function calculateTip(billAmount, tipPercentage = 15) {
     return tipAmount;
 }
 
+const sayGoodbye = () => console.log("Goodbye!");
+
+setTimeout(() => sayGoodbye(), 5000);
+
+
 // Test your functions here
 sayHello();
 introduceYourself("Sarah");
-greetPerson("Alex");
+greetPerson(24);
 greetPerson("Maria", "Hi");
 
 const sum = addNumbers(5, 3);
