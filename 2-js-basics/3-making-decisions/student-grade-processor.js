@@ -9,18 +9,17 @@ let allStudents = [
 
 let studentsWhoPass = [];
 
-for (let i = 0; i < allStudents.length; i++) {
-    let studentGrade = allStudents[i];
+let passingLetterGrades = ['A', 'A-', 'B', 'B-', 'C', 'C-'];
+
+for (let studentGrade of allStudents) {
     if (typeof studentGrade === 'string') {
-        if (studentGrade === 'A' || studentGrade === 'A-' || 
-            studentGrade === 'B' || studentGrade === 'B-' || 
-            studentGrade === 'C' || studentGrade === 'C') 
+        if (passingLetterGrades.includes(studentGrade)) 
         {
             studentsWhoPass.push(studentGrade);
         }
         else 
         {
-            console.log("Invalid letter grade: " + studentGrade);
+            console.log(`Invalid letter grade: ${studentGrade}`);
         }
     }
 
@@ -29,16 +28,16 @@ for (let i = 0; i < allStudents.length; i++) {
             studentsWhoPass.push(studentGrade);
         }
         else if (studentGrade >= 0 && studentGrade < 3) {
-            console.log("Failed numeric grade: " + studentGrade);
+            console.log(`Failed numeric grade: ${studentGrade}`);
         }
         else {
-            console.log("Invalid numeric grade: " + studentGrade);
+            console.log(`Invalid numeric grade: ${studentGrade}`);
         }
     }
 
     else {
-        console.log("Invalid grade type: " + studentGrade);
+        console.log(`Invalid grade type: ${studentGrade}`);
     }
 }
 
-console.log("Students who passed: " + studentsWhoPass);
+console.log(`Students who passed: ${studentsWhoPass}`);
