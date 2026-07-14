@@ -31,16 +31,7 @@ function analyzeGrades(students) {
   }
 
   const averageScore = totalScore / students.length;
-  const aboveAverageStudents = [];
-  let index = 0;
-
-  while (index < students.length) {
-    if (students[index].score > averageScore) {
-      aboveAverageStudents.push(students[index].name);
-    }
-
-    index++;
-  }
+  const aboveAverageStudents = students.filter((student) => student.score > averageScore).map((student) => student.name);
 
   return {
     highestScore,
@@ -50,3 +41,14 @@ function analyzeGrades(students) {
     aboveAverageStudents
   };
 }
+
+// Test cases
+const testStudents = [
+  { name: 'Alice', score: 95 },
+  { name: 'Bob', score: 65 },
+  { name: 'Charlie', score: 85 },
+  { name: 'Diana', score: 72 },
+  { name: 'Eve', score: 88 }
+];
+
+console.log(analyzeGrades(testStudents));
